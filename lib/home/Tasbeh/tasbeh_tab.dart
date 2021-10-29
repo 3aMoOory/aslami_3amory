@@ -8,6 +8,7 @@ class TasbehTab extends StatefulWidget {
 }
 
 class _TasbehTabState extends State<TasbehTab> {
+  bool showFront = true;
   int count=0;
   String Text1='الحمد لله';
   void TextChange(String do3aa) {
@@ -51,11 +52,10 @@ class _TasbehTabState extends State<TasbehTab> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Container(
-                child: MaterialButton(onPressed: (){},
-                child:const ImageIcon(AssetImage('assets/images/sebha_head_image.png'),color: MyThemeData.PrimaryColor,size:50,),
-                ),
-              ),
+              Transform.rotate(
+                  angle: 50.0,
+                  child: const Image(image:AssetImage('assets/images/sebha_head_image.png')
+                    ,color: MyThemeData.PrimaryColor,height: 90,width: 50,)),
               GestureDetector(
                 onTap: (){
                   setState(() {
@@ -63,7 +63,8 @@ class _TasbehTabState extends State<TasbehTab> {
                      TextChange(Text1);
                   });
                 },
-                  child: const ImageIcon(AssetImage('assets/images/sebha_image.png'),size: 150,color: MyThemeData.PrimaryColor,)),
+                  child: const Image(image:AssetImage('assets/images/sebha_image.png')
+                    ,color: MyThemeData.PrimaryColor,width: 200,height: 234,)),
               const SizedBox(
                 height: 15,
               ),
